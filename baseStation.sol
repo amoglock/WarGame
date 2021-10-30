@@ -24,7 +24,7 @@ contract baseStation is gameObject {
 
     
 
-    function addUnit(uint unitId, uint addr, string typeUnit) private {
+    function addUnit(uint unitId, uint addr, string typeUnit) public {
         require(msg.sender == baseAddress);
         unitsAddr[unitId] = addr;
         units[typeUnit] = unitId;
@@ -32,7 +32,7 @@ contract baseStation is gameObject {
     }
 
     
-    function deleteUnit(uint unitId) private {
+    function deleteUnit(uint unitId) public {
         require(msg.sender == baseAddress);
         unitsAddr[unitId] = 0;
         tvm.accept();
@@ -46,12 +46,12 @@ contract baseStation is gameObject {
     }
 
 
-    function destroyWarrior(InterfaceGameObject myAddress, address enemy) private {
+    function destroyWarrior(InterfaceGameObject myAddress, address enemy) public {
         myAddress.destroy(enemy);
         tvm.accept();
     }
 
-    function destroyArcher(InterfaceGameObject myAddress, address enemy) private {
+    function destroyArcher(InterfaceGameObject myAddress, address enemy) public {
         myAddress.destroy(enemy);
         tvm.accept();
     }
