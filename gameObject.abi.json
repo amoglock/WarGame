@@ -1,0 +1,78 @@
+{
+	"ABI version": 2,
+	"version": "2.1",
+	"header": ["time", "expire"],
+	"functions": [
+		{
+			"name": "attackBase",
+			"inputs": [
+				{"name":"attack","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"value0","type":"string"}
+			]
+		},
+		{
+			"name": "attackWarrior",
+			"inputs": [
+				{"name":"attack","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"value0","type":"string"}
+			]
+		},
+		{
+			"name": "attackArcher",
+			"inputs": [
+				{"name":"attack","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"value0","type":"string"}
+			]
+		},
+		{
+			"name": "destroy",
+			"inputs": [
+				{"name":"killer","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "checkObject",
+			"inputs": [
+				{"name":"object","type":"string"}
+			],
+			"outputs": [
+				{"name":"value0","type":"string"},
+				{"name":"value1","type":"address"}
+			]
+		},
+		{
+			"name": "constructor",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"healthBase","type":"uint256"},
+		{"name":"healthWarrior","type":"uint256"},
+		{"name":"healthArcher","type":"uint256"},
+		{"name":"armorBase","type":"uint256"},
+		{"name":"armorWarrior","type":"uint256"},
+		{"name":"armorArcher","type":"uint256"},
+		{"name":"lastAttack","type":"address"},
+		{"name":"baseKiller","type":"address"},
+		{"name":"warriorKiller","type":"address"},
+		{"name":"archerKiller","type":"address"}
+	]
+}
