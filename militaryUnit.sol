@@ -7,12 +7,23 @@ pragma ton-solidity >= 0.35.0;
 pragma AbiHeader expire;
 
 import "gameObject.sol";
+//import "baseStation.sol";
+interface Base {
+    function addUnit(uint256 unitId, uint addr, string typeUnit) external;  
+}
+
 
 contract militaryUnit is gameObject {
 
-    uint warriorAttack = 3;
-    uint archerAttack = 2;
-    address baseAddr; 
+    uint public warriorAttack = 3;
+    uint public archerAttack = 2;
+    address public baseAddr; 
+
+    constructor(Base baseAddress, uint unitId, uint addr, string typeUnit) public {
+        baseAddress.addUnit(unitId, addr, typeUnit);
+        baseAddr = baseAddress;
+        tvm.accept();
+    }
 
 
     function attackEnemy(InterfaceGameObject enemyAddr, string unitType, uint attackPower) public {
@@ -22,6 +33,7 @@ contract militaryUnit is gameObject {
             enemyAddr.attackWarrior(attackPower);
         } else if (unitType == "archer"){
             enemyAddr.attackWarrior(attackPower);
+            tvm.accept();
         }
         
     }

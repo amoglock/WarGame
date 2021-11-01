@@ -4,6 +4,16 @@
 	"header": ["time", "expire"],
 	"functions": [
 		{
+			"name": "addUnit",
+			"inputs": [
+				{"name":"unitId","type":"uint256"},
+				{"name":"addr","type":"uint256"},
+				{"name":"typeUnit","type":"string"}
+			],
+			"outputs": [
+			]
+		},
+		{
 			"name": "destroy",
 			"inputs": [
 				{"name":"value0","type":"address"}
@@ -118,14 +128,6 @@
 			"outputs": [
 				{"name":"baseAddress","type":"address"}
 			]
-		},
-		{
-			"name": "warriorAddr",
-			"inputs": [
-			],
-			"outputs": [
-				{"name":"warriorAddr","type":"address"}
-			]
 		}
 	],
 	"data": [
@@ -147,7 +149,6 @@
 		{"name":"warriorKiller","type":"address"},
 		{"name":"archerKiller","type":"address"},
 		{"name":"baseAddress","type":"address"},
-		{"name":"warriorAddr","type":"address"},
 		{"name":"units","type":"optional(cell)"},
 		{"name":"unitsAddr","type":"map(uint256,uint256)"}
 	]

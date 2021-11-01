@@ -8,10 +8,9 @@ pragma AbiHeader expire;
 
 import "gameObject.sol";
 
-contract baseStation is gameObject {
+contract BaseStation is gameObject {
 
-    address public baseAddress = msg.sender;
-    address public warriorAddr;
+    address public baseAddress = this;
 
     mapping(string => uint) units;
     mapping(uint => uint) unitsAddr;
@@ -25,15 +24,14 @@ contract baseStation is gameObject {
     
 
     function addUnit(uint unitId, uint addr, string typeUnit) public {
-        require(msg.sender == baseAddress);
         unitsAddr[unitId] = addr;
         units[typeUnit] = unitId;
         tvm.accept();
     }
 
     
-    function deleteUnit(uint unitId) public {
-        require(msg.sender == baseAddress);
+    function deleteUnit(uint unitId) private {
+        require(this == baseAddress);
         unitsAddr[unitId] = 0;
         tvm.accept();
     }
@@ -46,12 +44,12 @@ contract baseStation is gameObject {
     }
 
 
-    function destroyWarrior(InterfaceGameObject myAddress, address enemy) public {
+    function destroyWarrior(InterfaceGameObject myAddress, address enemy) private {
         myAddress.destroy(enemy);
         tvm.accept();
     }
 
-    function destroyArcher(InterfaceGameObject myAddress, address enemy) public {
+    function destroyArcher(InterfaceGameObject myAddress, address enemy) private {
         myAddress.destroy(enemy);
         tvm.accept();
     }

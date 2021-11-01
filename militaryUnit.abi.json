@@ -4,6 +4,17 @@
 	"header": ["time", "expire"],
 	"functions": [
 		{
+			"name": "constructor",
+			"inputs": [
+				{"name":"baseAddress","type":"address"},
+				{"name":"unitId","type":"uint256"},
+				{"name":"addr","type":"uint256"},
+				{"name":"typeUnit","type":"string"}
+			],
+			"outputs": [
+			]
+		},
+		{
 			"name": "attackEnemy",
 			"inputs": [
 				{"name":"enemyAddr","type":"address"},
@@ -68,13 +79,6 @@
 			]
 		},
 		{
-			"name": "constructor",
-			"inputs": [
-			],
-			"outputs": [
-			]
-		},
-		{
 			"name": "armorBase",
 			"inputs": [
 			],
@@ -128,6 +132,30 @@
 			],
 			"outputs": [
 				{"name":"archerKiller","type":"address"}
+			]
+		},
+		{
+			"name": "warriorAttack",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"warriorAttack","type":"uint256"}
+			]
+		},
+		{
+			"name": "archerAttack",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"archerAttack","type":"uint256"}
+			]
+		},
+		{
+			"name": "baseAddr",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"baseAddr","type":"address"}
 			]
 		}
 	],
