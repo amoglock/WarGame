@@ -32,7 +32,7 @@ contract militaryUnit is gameObject {
         } else if (unitType == "warrior"){
             enemyAddr.attackWarrior(attackPower);
         } else if (unitType == "archer"){
-            enemyAddr.attackWarrior(attackPower);
+            enemyAddr.attackArcher(attackPower);
             tvm.accept();
         }
         
